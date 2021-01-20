@@ -1,7 +1,9 @@
 ## VizGradCAM
-VizGradCam is the fastest way to visualize GradCAM in Keras models. Most tutorials or function features similar method but requires the name of the last convolutional layer, performing the upscaling of the heatmap and superimposing it on the original image. In this repository, we aim to combine all of those task without the need for `last_conv_layer_name` by iterating backwards throught the neural network in search of a `Conv2D` class.
+VizGradCam is the fastest way to visualize GradCAM in Keras models. Most tutorials or function features similar method but requires the name of the last convolutional layer, performing the upscaling of the heatmap and superimposing it on the original image. In this repository, we aim to combine all of those tasks.
 
-This function is inspired by Keras' GradCAM toturial [here](https://keras.io/examples/vision/grad_cam/).
+<p align="center">
+  <img src="https://github.com/gkeechin/VizGradCAM/blob/main/examples/gradcam-example.png">
+</p>
 
 ### Usage
 The function takes a keras model with loaded weights, an image that is loaded in array form and a boolean flag that determines if the model plots the superimposed image or simply returns the heatmap.
@@ -20,6 +22,10 @@ test_img = img_to_array(load_img("monkey.jpeg" , target_size=(224,224)))
 # Use The Function - Boom!
 VizGradCAM(EfficientNetB4(weights="imagenet"), test_img))
 ```
+
+### More Information
+This function is inspired by Keras' GradCAM toturial [here](https://keras.io/examples/vision/grad_cam/) and the original paper, _Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization_ can be found [here](https://arxiv.org/abs/1610.02391).
+
 
 
 ### Tested / Supported Models
