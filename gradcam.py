@@ -8,7 +8,7 @@ from skimage.transform import resize
 from tensorflow.keras.models import Model
 
 
-def VizGradCAM(model, image, plot_results=True):
+def VizGradCAM(model, image, interpolant=0.5, plot_results=True):
     """VizGradCAM - Displays GradCAM based on Keras / TensorFlow models
     using the gradients from the last convolutional layer. This function
     should work with all Keras Application listed here:
@@ -23,6 +23,11 @@ def VizGradCAM(model, image, plot_results=True):
     Returns:
     Heatmap Array?
     """
+    # Sanity Check
+    assert (
+        interpolant > 0 and interpolant < 1
+    ), "Heatmap Interpolation Must Be Between 0 - 1"
+
     last_conv_layer = next(
         x for x in model.layers[::-1] if isinstance(x, K.layers.Conv2D)
     )
@@ -86,10 +91,11 @@ def VizGradCAM(model, image, plot_results=True):
     cvt_heatmap = cv2.cvtColor(heatmap, cv2.COLOR_BGR2RGB)
 
     # Enlarge Plot
-    plt.rcParams["figure.figsize"] = [16, 9]
     plt.rcParams["figure.dpi"] = 100
 
     if plot_results == True:
-        plt.imshow(np.uint8(original_img * 0.5 + cvt_heatmap * 0.5))
+        plt.imshow(
+            np.uint8(original_img * interpolant + cvt_heatmap * (1 - interpolant))
+        )
     else:
         return cvt_heatmap
