@@ -1,11 +1,9 @@
 ## VizGradCAM
-<p align="center">
-  <img src="https://github.com/gkeechin/VizGradCAM/blob/main/examples/gradcam-example.png">
-</p>
-
 VizGradCam is the fastest way to visualize GradCAM in Keras models. GradCAM helps with providing visual explainability of trained models and may serve as an important step in ensuring that engineers observe the regions that contributed to certain inference results.
 
-
+<p align="center">
+  <img src="https://github.com/gkeechin/VizGradCAM/blob/main/examples/gradcam-example.png" width="700">
+</p>
 
 Most tutorials or function features similar methods but requires the name of the last convolutional layer, performing the upscaling of heatmap and superimposing it on the original image. In this repository, we aim to combine all of those tasks.
 ### Usage
