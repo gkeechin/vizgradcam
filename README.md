@@ -45,7 +45,7 @@ This function is inspired by Keras' GradCAM toturial [here](https://keras.io/exa
 
 
 ### Tested / Supported Models
-This function works with Keras CNN models and most Keras Applications / Based Models. This means that it will work even if you used `replace_top` to perform transfer learning on some of the models listed below. In GradCAM, we are looking to target gradients flowing into the last convolutional layer.
+This function works with Keras CNN models and most Keras Applications / Based Models. This means that it will work even if you used `include_top=False` to add your own final dense layers for transfer learning on some of the models listed below. In GradCAM, we are looking to target gradients flowing into the last convolutional layer.
 
 | Model Architecture |  Support  |  Dimension  |
 |--------------------|:---------:|------------:|
