@@ -8,7 +8,7 @@ VizGradCam is the fastest way to visualize GradCAM in Keras models. Most tutoria
 ### Usage
 The function takes a keras model with loaded weights, an image that is loaded in array form and a boolean flag that determines if the model plots the superimposed image or simply returns the heatmap.
 ```python
-VizGradCAM(model, image, plot_results=True)
+VizGradCAM(model, image, plot_results=True, interpolant=0.5)
 ```
 
 __Sample Usage__
@@ -22,6 +22,11 @@ test_img = img_to_array(load_img("monkey.jpeg" , target_size=(224,224)))
 # Use The Function - Boom!
 VizGradCAM(EfficientNetB4(weights="imagenet"), test_img))
 ```
+
+**Results**
+`plot_results=True` | `plot_results=False`
+------------ | -------------
+<img src="examples/superimposed.png" width="225" /> | <img src="examples/heatmap.png" width="225" />
 
 ### More Information
 This function is inspired by Keras' GradCAM toturial [here](https://keras.io/examples/vision/grad_cam/) and the original paper, _Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization_ can be found [here](https://arxiv.org/abs/1610.02391).
