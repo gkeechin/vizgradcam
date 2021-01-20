@@ -40,7 +40,7 @@ VizGradCAM(EfficientNetB4(weights="imagenet"), test_img))
 <img src="examples/superimposed.png" width="225" /> | <img src="examples/heatmap.png" width="225" />
 
 ### More Information
-This function is inspired by Keras' GradCAM toturial [here](https://keras.io/examples/vision/grad_cam/) and the original paper, _Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization_ can be found [here](https://arxiv.org/abs/1610.02391).
+This function is inspired by Keras' GradCAM tuturial [here](https://keras.io/examples/vision/grad_cam/) and the original paper, _Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization_ can be found [here](https://arxiv.org/abs/1610.02391).
 
 
 
