@@ -15,10 +15,10 @@ __Sample Usage__
 from gradcam import VizGradCAM
 
 # Load Your Favourite Image
-test_img = img_to_array(load_img("electric_guitar.jpeg" , target_size=(224,224)))
+test_img = img_to_array(load_img("monkey.jpeg" , target_size=(224,224)))
 
 # Use The Function - Boom!
-VizGradCAM(VGG16(weights="imagenet"), test_img))
+VizGradCAM(EfficientNetB4(weights="imagenet"), test_img))
 ```
 
 
