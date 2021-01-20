@@ -2,16 +2,16 @@
 VizGradCam is the fastest way to visualize GradCAM in Keras models. GradCAM helps with providing visual explainability of trained models and may serve as an important step in ensuring that engineers observe the regions that contributed to certain inference results.
 
 <p align="center">
-  <img src="https://github.com/gkeechin/VizGradCAM/blob/main/examples/gradcam-example.png" width="700">
+  <img src="https://github.com/gkeechin/VizGradCAM/blob/main/examples/gradcam-example.png" width="680">
 </p>
 
 Most tutorials or function features similar methods but requires the name of the last convolutional layer, performing the upscaling of heatmap and superimposing it on the original image. In this repository, we aim to combine all of those tasks.
 ### Usage
-This function can be imported or simply copied out into your script where required. It takes in a few parameters:
+This function can be imported or simply copied out into your script where required. Specific usage can be found in the sample [Jupyter Notebook](https://github.com/gkeechin/vizgradcam/blob/main/examples/example.ipynb).
 
 ```python
 """
-Parameters:
+Function Parameters:
     model        : Compiled Model with Weights Loaded
     image        : Image to Perform Inference On 
     plot_results : True - Function Plots using PLT
