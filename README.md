@@ -1,13 +1,23 @@
 ## VizGradCAM
-VizGradCam is the fastest way to visualize GradCAM in Keras models. Most tutorials or function features similar method but requires the name of the last convolutional layer, performing the upscaling of the heatmap and superimposing it on the original image. In this repository, we aim to combine all of those tasks.
-
 <p align="center">
   <img src="https://github.com/gkeechin/VizGradCAM/blob/main/examples/gradcam-example.png">
 </p>
+VizGradCam is the fastest way to visualize GradCAM in Keras models. GradCAM helps with providing visual explainability of trained models and may serve as an important step in ensuring that engineers observe the regions that contributed to certain inference results.
 
+Most tutorials or function features similar methods but requires the name of the last convolutional layer, performing the upscaling of heatmap and superimposing it on the original image. In this repository, we aim to combine all of those tasks.
 ### Usage
-The function takes a keras model with loaded weights, an image that is loaded in array form and a boolean flag that determines if the model plots the superimposed image or simply returns the heatmap.
+This function can be imported or simply copied out into your script where required. It takes in a few parameters:
+
 ```python
+"""
+Parameters:
+    model        : Compiled Model with Weights Loaded
+    image        : Image to Perform Inference On 
+    plot_results : True - Function Plots using PLT
+                   False - Returns Heatmap Array
+    interpolant  : Interpolant Value that Describes The Superimposition Ratio
+                   Between Image and Heatmap
+"""
 VizGradCAM(model, image, plot_results=True, interpolant=0.5)
 ```
 
@@ -34,7 +44,7 @@ This function is inspired by Keras' GradCAM toturial [here](https://keras.io/exa
 
 
 ### Tested / Supported Models
-This function works with Keras CNN models and most Keras Applications / Based Models. This means that it will work even if you built used `replace_top` to perform transfer learning on some of the models listed below since in GradCAM, we are looking to targe tthe gradients flowing into the last layer of the CNN.
+This function works with Keras CNN models and most Keras Applications / Based Models. This means that it will work even if you used `replace_top` to perform transfer learning on some of the models listed below. In GradCAM, we are looking to target gradients flowing into the last convolutional layer.
 
 | Model Architecture |  Support  |  Dimension  |
 |--------------------|:---------:|------------:|
