@@ -35,8 +35,8 @@ VizGradCAM(EfficientNetB4(weights="imagenet"), test_img))
 ```
 
 **Results**
-`plot_results=True` | `plot_results=False`
------------- | -------------
+|`plot_results=True` | `plot_results=False`|
+|------------ | -------------|
 <img src="examples/superimposed.png" width="225" /> | <img src="examples/heatmap.png" width="225" />
 
 ### More Information
