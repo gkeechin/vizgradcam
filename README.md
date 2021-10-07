@@ -31,7 +31,7 @@ from gradcam import VizGradCAM
 test_img = img_to_array(load_img("monkey.jpeg" , target_size=(224,224)))
 
 # Use The Function - Boom!
-VizGradCAM(EfficientNetB4(weights="imagenet"), test_img))
+VizGradCAM(EfficientNetB4(weights="imagenet"), test_img)
 ```
 
 **Results**

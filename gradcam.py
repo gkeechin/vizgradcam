@@ -98,4 +98,6 @@ def VizGradCAM(model, image, interpolant=0.5, plot_results=True):
             np.uint8(original_img * interpolant + cvt_heatmap * (1 - interpolant))
         )
     else:
-        return cvt_heatmap
+        plt.imshow(
+            np.uint8(cvt_heatmap * (1 - interpolant))
+        )
